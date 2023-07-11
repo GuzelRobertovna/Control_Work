@@ -8,9 +8,11 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-int number = Prompt("Введите количество элементов массива: ");
-string[] str1 = new String[number];
+int length = Prompt("Введите количество элементов массива: ");
+string[] str1 = new String[length];
 FillArray(str1);
+Console.WriteLine("Сформированный массив:");
+PrintArray(str1);
 
 
 int Prompt(string message)
@@ -28,4 +30,14 @@ void FillArray(string[] Str)
         Console.Write($"Введите {i + 1} элемент массива: ");
         Str[i] = Console.ReadLine()!;
     }
+}
+
+void PrintArray(string[] Str)
+{
+    Console.Write("[");
+    for (int i = 0; i < Str.Length; i++)
+    {
+        Console.Write($" {Str[i]} ");
+    }
+    Console.WriteLine("]");
 }
