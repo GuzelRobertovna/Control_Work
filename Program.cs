@@ -13,6 +13,9 @@ string[] str1 = new String[length];
 FillArray(str1);
 Console.WriteLine("Сформированный массив:");
 PrintArray(str1);
+string[] str2 = GetNewArray(str1);
+Console.WriteLine("Новый массив:");
+PrintArray(str2);
 
 
 int Prompt(string message)
@@ -40,4 +43,19 @@ void PrintArray(string[] Str)
         Console.Write($" {Str[i]} ");
     }
     Console.WriteLine("]");
+}
+
+string[] GetNewArray(string[] Str)
+{
+    int j = 0;
+    string[] NewStr = new String[Str.Length];
+    foreach (string el in Str)
+    {
+        if (el.Length <= 3)
+        {
+            NewStr[j] = el;
+            j++;
+        }
+    }
+    return NewStr;
 }
